@@ -1,18 +1,24 @@
-# Easebuzz Handler
+# WPPConnect Client
 
 ## Installation and usage
 
 ### Install via composer
 ```
-composer require scalexy/laravel-tools
+composer require scalexy/wppconnect
 ```
 
 ### Add to .env
 ```
+WPPCONNECT_SERVER_ENDPOINT="http://instance:port"
+WPPCONNECT_SERVER_SECRET="*******"
 ```
 
 ### Add to config/services.php
 ```
+'wppconnect' => [
+	'endpoint' => env('WPPCONNECT_SERVER_ENDPOINT'),
+	'secret' => env('WPPCONNECT_SERVER_SECRET'),
+],
 ```
 
 ## Why
@@ -33,14 +39,4 @@ If there are any security issues, please mail us security@scalexy.com
 
 ## Features implemented
 
-- Traits
-- - Autorun Functions
-- - - AddMissingUUIDOnCreating
-- - - AddMissingTOTPKeyOnCreating
-- - - HashPasswordOnCreating
-- - - HashPasswordOnUpdating
-- - Exceptions
-- - - FormatExceptionAsJSONForAPI
-
-- Middlewares
-- - FormatAPIResponse
+- Auth

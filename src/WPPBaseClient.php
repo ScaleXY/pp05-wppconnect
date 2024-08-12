@@ -8,7 +8,7 @@ class WPPBaseClient
 
     public $token = '';
 
-    public function __construct(string $session_id, ?string $token)
+    public function __construct(string $session_id, ?string $token = null)
     {
         $this->session_id = $session_id;
         if (! is_null($token)) {

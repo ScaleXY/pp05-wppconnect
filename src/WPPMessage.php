@@ -141,7 +141,7 @@ class WPPMessage extends WPPBaseClient
 
     public function CheckNumberAndThrowException($destination_iden)
     {
-        if ((new WPPMisc($this->session_id, $this->token))->checkNumberStatus($destination_iden)) {
+        if ((new WPPMisc($this->session_id, $this->token))->checkAndReportNumberStatus($destination_iden)) {
             throw new \Exception('Phone number is not valid');
         }
     }

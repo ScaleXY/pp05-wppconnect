@@ -11,7 +11,7 @@ class WPPBaseClient
     public function __construct(string $session_id, ?string $token = null)
     {
         $this->session_id = $session_id;
-        if (! is_null($token)) {
+        if (is_null($token)) {
             $generated_token_response = WPPAuth::generateToken($session_id);
             $this->token = $generated_token_response['token'];
         }

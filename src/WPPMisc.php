@@ -27,7 +27,7 @@ class WPPMisc extends WPPBaseClient
     }
 
     // Check And Handle Number Status
-    public function checkAndHandleNumberStatus($phone_number, $LoggingClass = null)
+    public function checkAndReportNumberStatus($phone_number, $LoggingClass = null)
     {
         $number_check = $this->checkNumberStatus($phone_number);
         switch ($number_check['response']['numberExists'] ?? null) {
